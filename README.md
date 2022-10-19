@@ -6,9 +6,10 @@ It deactivates fcitx/fcitx5 in NORMAL mode, which should leave you in English in
 
 ## Requirement
 
-1. neovim >= 0.7: for the lua APIs
-1. fcitx-remote or fcitx5-remote: they are installed as part of the fcitx/fcitx5 package in archlinux/debian/ubuntu
-1. a Linux/GNU distro: I don't have a macOS/Windows for testing, maybe the plugin works there too
+1. neovim >= 0.7: for the lua APIs.
+1. fcitx-remote or fcitx5-remote: they are installed as part of the fcitx/fcitx5 package in archlinux/debian/ubuntu.
+1. Make sure you have English as the first input method in your input method group. And you have Pinyin, or some other input method, as the second in the same group. Those can be configured in fcitx5-configtool/fcitx-configtool.
+1. A Linux/GNU distro: I don't have a macOS/Windows for testing, maybe the plugin works there too.
 
 ## Installation
 
