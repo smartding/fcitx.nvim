@@ -3,14 +3,17 @@ local api = vim.api
 local fn = vim.fn
 
 local M = {}
+
 -- fcitx_remote_cmd can be fcitx-remote for fcitx4 or fcitx5-remote for fcitx5
 local fcitx_remote_cmd = ""
+-- fcitx status, as returned by fcitx5-remote/fctix-remote
+local Status = { CLOSE = 0, INACTIVE = 1, ACTIVE = 2 }
 
 local function leave_insert()
   -- fcitx5-remote takes 0.003-0.005s to run, no need to go async
   local fcitx_status = tonumber(vim.fn.system(fcitx_remote_cmd))
-  -- 2 means fcitx is active, 1 means inactive
-  if fcitx_status == 2 then
+
+  if fcitx_status == Status.ACTIVE then
     -- fcitx_activate_in_insert means whether to activate fcitx next time in INSERT mode
     vim.b.fcitx_activate_in_insert = true
     -- always switch to en in NORMAL mode
