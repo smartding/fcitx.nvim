@@ -47,7 +47,7 @@ M.setup = function()
   elseif fn.executable("fcitx-remote") == 1 then
     fcitx_remote_cmd = "fcitx-remote"
   else
-    print("fcitx-remote/fcitx5-remote not in PATH, Aborting setup")
+    vim.notify("fcitx-remote/fcitx5-remote not in PATH, Aborting setup")
     return
   end
 
