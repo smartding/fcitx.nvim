@@ -41,6 +41,11 @@ M.setup = function()
     return
   end
 
+  -- no need to switch input method if in wsl
+  if string.find(uv.os_uname().release, "microsoft") then
+    return
+  end
+
   -- defaults to fcitx5-remote
   if fn.executable("fcitx5-remote") == 1 then
     fcitx_remote_cmd = "fcitx5-remote"
